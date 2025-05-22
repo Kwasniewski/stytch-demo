@@ -1,14 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { useStytchUser } from "@stytch/react";
-import { Navigate } from 'react-router-dom';
+import { useStytchUser } from '@stytch/react';
+import { Navigate, Link } from 'react-router';
 
 const Home: React.FC = () => {
   const { user } = useStytchUser();
   if (user) {
     return <Navigate to="/dashboard" replace />;
   }
-
 
   return (
     <div className="home-container">
@@ -21,4 +19,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home; 
+export default Home;

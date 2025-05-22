@@ -13,9 +13,7 @@ const Login: React.FC = () => {
     },
   };
 
-  return (
-    <StytchLogin config={config}  />
-  );
+  return <StytchLogin config={config} />;
 };
 
-export default Login; 
+export default Login;

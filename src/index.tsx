@@ -9,22 +9,20 @@ import { StytchUIClient } from '@stytch/vanilla-js';
 // optional object for configuring SDK cookie behavior, currently showing defaults
 const stytchOptions = {
   cookieOptions: {
-    opaqueTokenCookieName: "demo_session",
-    jwtCookieName: "demo_jwt",
-    path: "",
+    opaqueTokenCookieName: 'demo_session',
+    jwtCookieName: 'demo_jwt',
+    path: '',
     availableToSubdomains: false,
-    domain: "",
-  }
-}
+    domain: '',
+  },
+};
 
 const stytchClient = new StytchUIClient(
   process.env.REACT_APP_STYTCH_PUBLIC_TOKEN || '',
   stytchOptions
 );
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
     <StytchProvider stytch={stytchClient}>

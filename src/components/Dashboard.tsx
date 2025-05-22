@@ -1,12 +1,12 @@
 import React from 'react';
-import { useStytch, useStytchSession, useStytchUser } from "@stytch/react";
-import { Navigate } from 'react-router-dom';
+import { useStytch, useStytchSession, useStytchUser } from '@stytch/react';
+import { Navigate } from 'react-router';
 
 const Dashboard: React.FC = () => {
   const stytch = useStytch();
   const { user } = useStytchUser();
   const { session } = useStytchSession();
-      
+
   if (!user) {
     return <Navigate to="/login" replace />;
   }
@@ -25,9 +25,8 @@ const Dashboard: React.FC = () => {
         <code>{JSON.stringify(session, null, 2)}</code>
       </pre>
       <p>
-        You are logged in, and a Session has been created. The SDK stores the
-        Session as a token and a JWT in the browser cookies as{" "}
-        <span className="code">stytch_session</span> and{" "}
+        You are logged in, and a Session has been created. The SDK stores the Session as a token and
+        a JWT in the browser cookies as <span className="code">stytch_session</span> and{' '}
         <span className="code">stytch_session_jwt</span> respectively.
       </p>
       <button className="primary" onClick={() => stytch.session.revoke()}>
@@ -37,4 +36,4 @@ const Dashboard: React.FC = () => {
   );
 };
 
-export default Dashboard; 
+export default Dashboard;

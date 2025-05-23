@@ -6,9 +6,9 @@ const Login: React.FC = () => {
   const config = {
     products: [Products.emailMagicLinks, Products.oauth],
     emailMagicLinksOptions: {
-      loginRedirectURL: `${process.env.REACT_APP_DOMAIN}/authenticate`,
+      loginRedirectURL: `${process.env.REACT_APP_DOMAIN}/stytch-demo`,
       loginExpirationMinutes: 30,
-      signupRedirectURL: `${process.env.REACT_APP_DOMAIN}/authenticate`,
+      signupRedirectURL: `${process.env.REACT_APP_DOMAIN}/stytch-demo`,
       signupExpirationMinutes: 30,
       createUserAsPending: true,
     },

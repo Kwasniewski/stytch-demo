@@ -8,7 +8,6 @@ import { createBrowserRouter, RouterProvider, Navigate } from 'react-router';
 import Home from './components/Home';
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
-import Authenticate from './components/Authenticate';
 
 // optional object for configuring SDK cookie behavior, currently showing defaults
 const stytchOptions = {
@@ -35,10 +34,6 @@ const router = createBrowserRouter(
     {
       path: '/login',
       element: <Login />,
-    },
-    {
-      path: '/authenticate',
-      element: <Authenticate />,
     },
     {
       path: '/dashboard',

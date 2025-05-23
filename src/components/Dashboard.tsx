@@ -35,11 +35,6 @@ const Dashboard: React.FC = () => {
         showLineNumbers={true}
         wrapLongLines={true}
       />
-      <p>
-        You are logged in, and a Session has been created. The SDK stores the Session as a token and
-        a JWT in the browser cookies as <span className="code">stytch_session</span> and{' '}
-        <span className="code">stytch_session_jwt</span> respectively.
-      </p>
     </div>
   );
 };

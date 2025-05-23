@@ -5,28 +5,33 @@ import Login from './components/Login';
 import Authenticate from './components/Authenticate';
 import './App.css';
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <Home />,
+    },
+    {
+      path: '/login',
+      element: <Login />,
+    },
+    {
+      path: '/authenticate',
+      element: <Authenticate />,
+    },
+    {
+      path: '/dashboard',
+      element: <Dashboard />,
+    },
+    {
+      path: '*',
+      element: <Navigate to="/" replace />,
+    },
+  ],
   {
-    path: '/',
-    element: <Home />,
-  },
-  {
-    path: '/login',
-    element: <Login />,
-  },
-  {
-    path: '/authenticate',
-    element: <Authenticate />,
-  },
-  {
-    path: '/dashboard',
-    element: <Dashboard />,
-  },
-  {
-    path: '*',
-    element: <Navigate to="/" replace />,
-  },
-]);
+    basename: '/stytch-demo',
+  }
+);
 
 function App() {
   return <RouterProvider router={router} />;

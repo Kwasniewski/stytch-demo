@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStytchUser } from '@stytch/react';
-import { Navigate, Link } from 'react-router';
+import { Navigate } from 'react-router';
+import Login from './Login';
 
 const Home: React.FC = () => {
   const { user } = useStytchUser();
@@ -10,11 +11,9 @@ const Home: React.FC = () => {
 
   return (
     <div className="home-container">
-      <h1>Welcome to Our App</h1>
+      <h1>Welcome to Stytch Demo</h1>
       <p>Please sign in to continue</p>
-      <Link to="/login" className="auth-link">
-        Sign In
-      </Link>
+      <Login />
     </div>
   );
 };

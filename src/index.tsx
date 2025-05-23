@@ -7,7 +7,6 @@ import { StytchUIClient } from '@stytch/vanilla-js';
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router';
 import Home from './components/Home';
 import Dashboard from './components/Dashboard';
-import Login from './components/Login';
 
 // optional object for configuring SDK cookie behavior, currently showing defaults
 const stytchOptions = {

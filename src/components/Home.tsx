@@ -35,7 +35,6 @@ const Home: React.FC = () => {
   return (
     <div className="home-container">
       <h1>Welcome to Stytch Demo</h1>
-      <p>Please sign in to continue</p>
       <Login />
     </div>
   );

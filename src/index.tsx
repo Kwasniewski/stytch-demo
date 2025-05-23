@@ -26,28 +26,33 @@ const stytchClient = new StytchUIClient(
   stytchOptions
 );
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <Home />,
+    },
+    {
+      path: '/login',
+      element: <Login />,
+    },
+    {
+      path: '/authenticate',
+      element: <Authenticate />,
+    },
+    {
+      path: '/dashboard',
+      element: <Dashboard />,
+    },
+    {
+      path: '*',
+      element: <Navigate to="/" replace />,
+    },
+  ],
   {
-    path: '/',
-    element: <Home />,
-  },
-  {
-    path: '/login',
-    element: <Login />,
-  },
-  {
-    path: '/authenticate',
-    element: <Authenticate />,
-  },
-  {
-    path: '/dashboard',
-    element: <Dashboard />,
-  },
-  {
-    path: '*',
-    element: <Navigate to="/" replace />,
-  },
-]);
+    basename: '/stytch-demo',
+  }
+);
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(

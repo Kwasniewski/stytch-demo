@@ -8,7 +8,7 @@ const Dashboard: React.FC = () => {
   const { session } = useStytchSession();
 
   if (!user) {
-    return <Navigate to="/login" replace />;
+    return <Navigate to="/" replace />;
   }
 
   return (

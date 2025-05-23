@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { StytchProvider } from '@stytch/react';
 import { StytchUIClient } from '@stytch/vanilla-js';
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router';
+import Home from './components/Home';
+import Dashboard from './components/Dashboard';
+import Login from './components/Login';
+import Authenticate from './components/Authenticate';
 
 // optional object for configuring SDK cookie behavior, currently showing defaults
 const stytchOptions = {
@@ -22,11 +26,34 @@ const stytchClient = new StytchUIClient(
   stytchOptions
 );
 
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />,
+  },
+  {
+    path: '/login',
+    element: <Login />,
+  },
+  {
+    path: '/authenticate',
+    element: <Authenticate />,
+  },
+  {
+    path: '/dashboard',
+    element: <Dashboard />,
+  },
+  {
+    path: '*',
+    element: <Navigate to="/" replace />,
+  },
+]);
+
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
     <StytchProvider stytch={stytchClient}>
-      <App />
+      <RouterProvider router={router} />
     </StytchProvider>
   </React.StrictMode>
 );

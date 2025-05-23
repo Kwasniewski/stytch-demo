@@ -2,6 +2,7 @@
   "name": "stytch-demo",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://kwasniewski.github.io/stytch-demo/",
   "dependencies": {
     "@stytch/react": "^19.5.2",
     "@stytch/vanilla-js": "^5.24.1",

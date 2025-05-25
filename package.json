@@ -10,15 +10,22 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
     "@testing-library/user-event": "^13.2.1",
+    "@types/cookie-parser": "^1.4.8",
+    "@types/cors": "^2.8.18",
     "@types/jest": "^27.0.1",
     "@types/node": "^16.7.13",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
     "react": "^19.1.0",
     "react-code-blocks": "^0.1.6",
     "react-dom": "^19.1.0",
     "react-router": "^7.6.0",
     "react-scripts": "5.0.1",
+    "stytch": "^12.19.0",
+    "ts-node": "^10.9.2",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
   },
@@ -30,7 +37,8 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^2.8.7"
+    "prettier": "^2.8.7",
+    "ts-node-dev": "^2.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -39,7 +47,10 @@
     "eject": "react-scripts eject",
     "lint": "eslint src --ext .ts,.tsx",
     "lint:fix": "eslint src --ext .ts,.tsx --fix",
-    "format": "prettier --write \"src/**/*.{ts,tsx}\""
+    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "server": "ts-node --files --project backend/tsconfig.json ./backend/server.ts",
+    "server:dev": "ts-node-dev --files -r dotenv/config --project backend/tsconfig.json ./backend/server.ts",
+    "build:server": "tsc --project backend/tsconfig.json"
   },
   "eslintConfig": {
     "extends": [

@@ -1,0 +1,9 @@
+{
+  "name": "stytch-demo-backend",
+  "main": "src/index.ts",
+  "compatibility_date": "2024-05-01",
+  "vars": {
+    "STYTCH_PROJECT_ID": "",
+    "STYTCH_SECRET": ""
+  }
+}

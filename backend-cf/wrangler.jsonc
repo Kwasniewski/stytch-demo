@@ -3,7 +3,8 @@
   "main": "src/index.ts",
   "compatibility_date": "2024-05-01",
   "vars": {
-    "STYTCH_PROJECT_ID": "",
-    "STYTCH_SECRET": ""
+    //"STYTCH_PROJECT_ID": "project-test-",
+    //"STYTCH_SECRET": "secret-test-",
+    //"REACT_APP_DOMAIN": "https://kwasniewski.github.io"
   }
 }

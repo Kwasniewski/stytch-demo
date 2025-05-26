@@ -3,14 +3,8 @@ import stytch from 'stytch';
 export interface Env {
   STYTCH_PROJECT_ID: string;
   STYTCH_SECRET: string;
+  REACT_APP_DOMAIN: string;
 }
-
-const DEFAULT_HEADERS = {
-  'Content-Type': 'application/json',
-  'Access-Control-Allow-Origin': '*', // TODO: Secure this eventually
-  'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type,Authorization',
-};
 
 function monkeyPatchStytchClientSettings(client: stytch.Client) {
   /* eslint-disable */
@@ -22,6 +16,12 @@ function monkeyPatchStytchClientSettings(client: stytch.Client) {
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
+    const DEFAULT_HEADERS = {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': env.REACT_APP_DOMAIN,
+      'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type,Authorization',
+    };
 
     // CORS preflight
     if (request.method === 'OPTIONS') {
@@ -34,6 +34,7 @@ export default {
     const jwt = request.headers.get('Authorization')?.split(' ')[1];
     if (!jwt) return new Response('Unauthorized', { status: 401, headers: DEFAULT_HEADERS });
 
+    // TODO: Add error handling here and admin path
     const stytchClient = new stytch.Client({
       project_id: (env.STYTCH_PROJECT_ID as string) || '',
       secret: (env.STYTCH_SECRET as string) || '',
